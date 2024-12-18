@@ -1,0 +1,21 @@
+<launch>
+  <!-- Argument for the world file -->
+  <arg name="world_file" default="$(find crop_follow)/worlds/crop_field.world"/>
+
+  <!-- ROS parameter to use simulation time (important for synchronization) -->
+  <param name="use_sim_time" value="true" />
+
+  <!-- Launch Gazebo with the custom world file -->
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+    <arg name="world_name" value="$(arg world_file)" />
+  </include>
+
+  <!-- Spawn the TurtleBot3 -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_turtlebot3" args="-param robot_description -gazebo -model turtlebot3" />
+
+  <!-- Optionally start teleoperation (keyboard control of TurtleBot3) -->
+  <node pkg="turtlebot3_teleop" type="teleop_keyboard.py" name="teleop_keyboard" output="screen" />
+
+  <!-- Start RViz with TurtleBot3 model -->
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch" />
+</launch>

@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <world name="crop_field_world">
+    
+    <!-- Define the sky and background color -->
+    <sky>
+      <lighting>
+        <directional>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.7 0.7 0.7 1.0</diffuse>
+        </directional>
+      </lighting>
+    </sky>
+
+    <!-- Define the floor (field) -->
+    <model name="floor">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3 3 0.1</size> <!-- Smaller 3m x 3m field -->
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.9</mu>
+                <mu2>0.9</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3 3 0.1</size> <!-- Smaller 3m x 3m field -->
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.2 0.1 1</ambient> <!-- Brown color for the soil -->
+            <diffuse>0.6 0.3 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Add Crop Figures (plants) -->
+    <!-- 10 crop rows placed in a 5x2 grid -->
+    
+    <model name="crop_row_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius> <!-- Smaller crop size -->
+              <length>0.3</length> <!-- Height of the crop figure -->
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius> <!-- Smaller crop size -->
+              <length>0.3</length> <!-- Height of the crop figure -->
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient> <!-- Green color for crops -->
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>-1 0 0.15 0 0 0</pose>
+    </model>
+
+    <model name="crop_row_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>-1 1 0.15 0 0 0</pose>
+    </model>
+
+    <model name="crop_row_3">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>1 1 0.15 0 0 0</pose>
+    </model>
+
+    <model name="crop_row_4">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>1 0 0.15 0 0 0</pose>
+    </model>
+
+    <model name="crop_row_5">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>-1 -1 0.15 0 0 0</pose>
+    </model>  
+
+    <model name="crop_row_6">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>1 -1 0.15 0 0 0</pose>
+    </model>
+
+    <model name="crop_row_7">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>0 -1 0.15 0 0 0</pose>
+    </model>
+
+    <model name="crop_row_8">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>0 0 0.15 0 0 0</pose>
+    </model>
+
+    <model name="crop_row_9">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>0 -1 0.15 0 0 0</pose>
+    </model>
+
+    <model name="crop_row_10">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <pose>0 1 0.15 0 0 0</pose>
+    </model>
+
+  </world>
+</sdf>
+

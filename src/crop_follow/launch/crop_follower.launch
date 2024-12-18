@@ -1,0 +1,19 @@
+<launch>
+  <!-- Set world file location for your custom world -->
+  <arg name="world_file" default="$(find crop_follow)/worlds/crop_field.world"/>
+
+  <!-- Set the simulation time parameter -->
+  <param name="use_sim_time" value="true" />
+
+  <!-- Launch Gazebo with the custom world, no need to pass world_name argument -->
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+    <!-- We are not passing world_name here anymore -->
+    <!-- It will be automatically handled by Gazebo -->
+  </include>
+
+  <!-- Spawn the TurtleBot3 -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_turtlebot3" args="-param robot_description -gazebo -model turtlebot3" />
+
+  <!-- Optional: If you want to start the teleop node for keyboard control -->
+  <node name="turtlebot3_teleop" pkg="turtlebot3_teleop" type="teleop_keyboard.py" output="screen" />
+</launch>
